@@ -24,7 +24,7 @@ function sayHein() {
         "HEIN?!",
         "HEINNN?",
         "HEIN.™",
-        "HEIN?!😂"
+        "HEIN?!!✌︎"
     ];
 
 
