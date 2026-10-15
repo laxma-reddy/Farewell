@@ -218,3 +218,83 @@ document
         );
 
     });
+
+function startReplacementSearch(choice) {
+    const body = document.getElementById("emergencyBody");
+
+    const openingMessage = choice === "accept"
+        ? "You accepted the situation. The system still refuses to believe you."
+        : "DENIAL DETECTED. We respect your opinion. Unfortunately, reality disagrees.";
+
+    body.innerHTML = `
+        <div class="emergency-icon">🔎</div>
+
+        <p class="emergency-tag">INITIATING EMERGENCY PROTOCOL</p>
+
+        <h2>Searching for Vaidehi 2.0...</h2>
+
+        <p class="emergency-text">${openingMessage}</p>
+
+        <div class="replacement-line">
+            &gt; Scanning AST database... <span>COMPLETE</span>
+        </div>
+
+        <div class="replacement-line">
+            &gt; Checking work quality... <span>NO MATCH</span>
+        </div>
+
+        <div class="replacement-line">
+            &gt; Testing problem-solving skills... <span>NO MATCH</span>
+        </div>
+
+        <div class="replacement-line">
+            &gt; Searching for Vaidehi-level excellence...
+            <span>SEARCH FAILED</span>
+        </div>
+
+        <div class="replacement-result">
+            <strong>ERROR 404: REPLACEMENT NOT FOUND</strong>
+            <p>Vaidehi is one of a kind.</p>
+            <p>System recommendation: Keep missing her.</p>
+        </div>
+
+        <button class="emergency-btn"
+            style="margin-top:25px"
+            onclick="resetEmergency()">
+            Try again (as if!)
+        </button>
+    `;
+}
+
+function resetEmergency() {
+    const body = document.getElementById("emergencyBody");
+
+    body.innerHTML = `
+        <div class="emergency-icon">⚠</div>
+
+        <p class="emergency-tag">CRITICAL ALERT</p>
+
+        <h2>Vaidehi's departure detected!</h2>
+
+        <p class="emergency-text">
+            A critical team member is leaving AST.
+            The system is unable to process this information.
+        </p>
+
+        <p class="emergency-status">
+            STATUS: <span>DENIAL MODE ACTIVE</span>
+        </p>
+
+        <div class="emergency-buttons">
+            <button class="emergency-btn"
+                onclick="startReplacementSearch('accept')">
+                Accept fate
+            </button>
+
+            <button class="emergency-btn secondary"
+                onclick="startReplacementSearch('deny')">
+                THIS CANNOT BE HAPPENING
+            </button>
+        </div>
+    `;
+}
