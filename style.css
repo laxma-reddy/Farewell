@@ -748,3 +748,203 @@ h2 {
         letter-spacing: -6px;
     }
 }
+
+/* CHAPTER 03 — AST EMERGENCY PROTOCOL */
+
+.ast-emergency {
+    min-height: 100vh;
+    padding: 110px 7%;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 79, 139, 0.09),
+        transparent 65%
+    );
+}
+
+.emergency-card {
+    max-width: 760px;
+    width: 100%;
+    margin: 35px auto 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 79, 139, 0.35);
+    border-radius: 20px;
+    background: #11131a;
+    box-shadow: 0 25px 80px rgba(255, 79, 139, 0.1);
+}
+
+.emergency-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 22px;
+    background: #1b1b25;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #f5f5f7;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff4f8b;
+    box-shadow: 0 0 12px #ff4f8b;
+    animation: emergencyBlink 1s infinite;
+}
+
+.emergency-code {
+    margin-left: auto;
+    color: #ff6b9c;
+}
+
+.emergency-body {
+    padding: 42px 30px;
+    text-align: center;
+}
+
+.emergency-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: emergencyPulse 1.5s infinite;
+}
+
+.emergency-tag {
+    color: #ff4f8b;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.emergency-body h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.emergency-text {
+    max-width: 510px;
+    margin: 0 auto 25px;
+    color: #a6a9b5;
+    line-height: 1.8;
+}
+
+.emergency-status {
+    margin: 20px 0 30px;
+    color: #a6a9b5;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.emergency-status span {
+    color: #ff6b9c;
+}
+
+.emergency-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.emergency-btn {
+    padding: 14px 22px;
+    border: 1px solid #ff4f8b;
+    border-radius: 50px;
+    background: #ff4f8b;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.emergency-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,79,139,0.25);
+}
+
+.emergency-btn.secondary {
+    background: transparent;
+    color: #ff8bb4;
+}
+
+.replacement-line {
+    margin: 12px 0;
+    padding: 13px 15px;
+    border-radius: 8px;
+    background: #191b24;
+    color: #a6a9b5;
+    text-align: left;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.replacement-line span {
+    color: #ff6b9c;
+    font-weight: 800;
+}
+
+.replacement-result {
+    margin-top: 25px;
+    padding: 22px;
+    border: 1px solid rgba(255,79,139,0.35);
+    border-radius: 12px;
+    color: #f5f5f7;
+    line-height: 1.8;
+    animation: resultAppear 0.5s ease-out;
+}
+
+.replacement-result strong {
+    color: #ff6b9c;
+}
+
+.emergency-caption {
+    margin-top: 22px;
+    text-align: center;
+    color: #a6a9b5;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@keyframes emergencyBlink {
+    50% { opacity: 0.3; }
+}
+
+@keyframes emergencyPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .ast-emergency {
+        padding: 90px 6%;
+    }
+
+    .emergency-body {
+        padding: 32px 18px;
+    }
+
+    .emergency-buttons {
+        flex-direction: column;
+    }
+
+    .emergency-btn {
+        width: 100%;
+    }
+}
