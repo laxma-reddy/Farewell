@@ -948,3 +948,188 @@ h2 {
         width: 100%;
     }
 }
+
+
+/* =========================
+   CHAPTER 05 — TEAM MESSAGES
+========================= */
+
+.team-section {
+    display: block;
+    min-height: 100vh;
+    padding: 110px 7%;
+}
+
+.team-intro {
+    max-width: 650px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: -5px;
+}
+
+.team-message-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 50px;
+}
+
+.team-message-card {
+    padding: 28px;
+    background: rgba(17, 19, 26, 0.88);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    min-width: 0;
+}
+
+.team-message-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 79, 139, 0.45);
+}
+
+.team-card-icon {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.team-card-label {
+    color: var(--pink);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.team-message-card h3 {
+    color: var(--text);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.team-card-preview {
+    color: var(--muted);
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.team-message-card details {
+    border-top: 1px solid var(--line);
+    padding-top: 17px;
+}
+
+.team-message-card summary {
+    color: var(--pink);
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.team-message-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.team-message-card summary::after {
+    content: "+";
+    font-size: 23px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.team-message-card details[open] summary::after {
+    content: "−";
+}
+
+.team-full-message {
+    padding-top: 20px;
+    animation: teamMessageReveal 0.3s ease;
+}
+
+.team-full-message p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+}
+
+.team-full-message p:last-child {
+    margin-bottom: 0;
+}
+
+.team-full-message h4 {
+    color: var(--pink);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 8px 0 12px;
+}
+
+.team-full-message strong {
+    color: var(--text);
+}
+
+.team-featured-card {
+    border-color: rgba(255, 79, 139, 0.3);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 79, 139, 0.08),
+            rgba(17, 19, 26, 0.95) 60%
+        );
+}
+
+.team-closing-quote {
+    max-width: 850px;
+    margin: 65px auto 10px;
+    text-align: center;
+    color: var(--muted);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(25px, 4vw, 42px);
+    line-height: 1.5;
+}
+
+.team-closing-quote span {
+    display: block;
+    color: var(--pink);
+}
+
+@keyframes teamMessageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 800px) {
+    .team-section {
+        padding: 90px 6%;
+    }
+
+    .team-message-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .team-message-card {
+        padding: 24px;
+    }
+
+    .team-closing-quote {
+        margin-top: 45px;
+    }
+}
